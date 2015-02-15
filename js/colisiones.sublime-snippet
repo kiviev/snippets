@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+function hit(a , b){
+	var hit=false;
+
+	if(b.x + b.width >= a.x && b.x < a.x + a.width){
+		if( b.y + b.height >= a.y && b.y < a.y + a.height){
+			hit=true;
+		}
+	}
+	if(b.x <= a.x && b.x + b.width >= a.x + a.width){
+		if(b.y <= a.y && b.y + b.width >= a.y + a.height){
+			hit=true;
+		}
+	}
+	if(a.x <= b.x && a.x + a.width >= b.x + b.width){
+		if(a.y <= b.y && a.y + a.width >= b.y + b.height){
+			hit=true;
+		}
+	}
+	return hit;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_jsFncColision</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

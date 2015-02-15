@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+\$('input$1').keydown(function(e) {
+  // variable e contains keystroke data
+  // only accessible with .keydown()
+  if(e.which == 11$2) {
+     e.preventDefault();
+     $3
+  }
+});
+
+\$('input$1').keyup(function(event) {
+  // run other event codes here	
+  $4						  
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_jqKeyEvents</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

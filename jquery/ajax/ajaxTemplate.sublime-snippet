@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+\$.ajax({
+  type: 'POST$1',
+  url: 'miarchivo$2.php',
+  data: "q$3="+myform.serialize(),
+  success: function(data){
+    // on success use return data here
+    $4
+  },
+  error: function(xhr, type, exception) { 
+    // if ajax fails display error alert
+    alert("ajax error response type "+type);
+  }
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_jqAjaxTemplate</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

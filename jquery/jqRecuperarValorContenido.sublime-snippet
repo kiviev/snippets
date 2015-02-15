@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+\$("p$1").click(function () {
+  var htmlstring = \$(this).html(); // obtain html string from paragraph
+  \$(this).text(htmlstring); // overwrite paragraph text with new string value
+});
+	
+	var value1 = \$('input#username$2').val(); // textfield input value
+	var value2 = \$('input:checkbox:checked$3').val(); // get the value from a checked checkbox
+	var value3 = \$('input:radio[name=bar$4]:checked').val(); // get the value from a set of radio buttons
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_jqRecuperarValorContenido</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

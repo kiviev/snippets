@@ -1,0 +1,45 @@
+<snippet>
+	<content><![CDATA[
+function send_smtp_email( $phpmailer )
+{
+    // Define que estamos enviando por SMTP
+    $phpmailer->isSMTP();
+ 
+    // La dirección del HOST del servidor de correo SMTP p.e. smtp.midominio.com
+    $phpmailer->Host = "localhost";
+ 
+    // Uso autenticación por SMTP (true|false)
+    $phpmailer->SMTPAuth = true;
+ 
+    // Puerto SMTP - Suele ser el 25, 465 o 587
+    $phpmailer->Port = "465";
+ 
+    // Usuario de la cuenta de correo
+    $phpmailer->Username = "info@ofertaka.com";
+ 
+    // Contraseña para la autenticación SMTP
+    $phpmailer->Password = "password";
+ 
+    // El tipo de encriptación que usamos al conectar - ssl (deprecated) o tls
+    $phpmailer->SMTPSecure = "tls";
+ 
+    $phpmailer->From = "info@ofertaka.com";
+    $phpmailer->FromName = "OfertaKa.com";
+}
+
+function my_mail_from_name ($from_name) {
+return 'Ofertaka.com'; // cambiar por el nombre que queremos que aparezca como remitente
+}
+add_filter('wp_mail_from_name', 'my_mail_from_name', 1, 1 );
+
+function my_mail_from ($from_email) {
+return 'info@ofertaka.com'; // cambiar por el email desde el que se enviará la notificación
+}
+add_filter('wp_mail_from', 'my_mail_from', 1, 1 );
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_wpCambiomail</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

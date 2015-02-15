@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+var sometext = "here is more HTML";
+\$("p#text1$1").append(sometext); // added after
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_jqAppendHtml</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

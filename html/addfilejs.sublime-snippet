@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<script type="text/JavaScript" src="js/$1.js"></script>
+
+]]></content>
+
+ <tabTrigger>_htmlJsLinkFile</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script>window.angular || document.write('<script type="text/javascript" src="js/script-1.js"><\/script>');</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_AngularScriptInHtml</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

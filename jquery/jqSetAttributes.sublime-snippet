@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\$("a#use$1r").attr("href$2", "http://www.google.com/"); // set the href attribute to a new value
+\$("a#user$1").attr({
+  alt$3: "the classiest search engine$4",
+  href$5: "http://www.google.com/$s6"
+}); // set more than one attribute to new values
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_jqSetAttributes</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

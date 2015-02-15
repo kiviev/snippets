@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+\$(document).ready(function(){
+
+     \$(window).resize(function(){
+ 
+          // aquí le pasamos la clase o id de nuestro div a centrar (en este caso "caja")
+          \$('$1').css({
+               position:'absolute',
+               left: (\$(window).width() - \$('$1').outerWidth())/2,
+               top: (\$(window).height() - \$('$1').outerHeight())/2
+          });
+       
+    });
+\$(document).ready(function() {
+	\$('$1').fadeIn(1000);
+	\$('.sombra').fadeIn(1000);
+});
+// Ejecutamos la función
+\$(window).resize();
+ 
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>_jqCentrardiv</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

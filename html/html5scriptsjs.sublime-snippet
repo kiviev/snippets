@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		$1
+	</script>
+</head>
+<body>
+	
+<script type="text/javascript">
+	
+</script>
+</body>
+
+</html>
+]]></content>
+
+ <tabTrigger>_html5js</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

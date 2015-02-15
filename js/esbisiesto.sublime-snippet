@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+function esBisiesto(num){
+	if( (num%4==0) && ( ( !(num%100==0) ) || ( num%400==0 )  ) ){
+		return true;
+	}else { return false;} 
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_jsFncEsBisiesto</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
