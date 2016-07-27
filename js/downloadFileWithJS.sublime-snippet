@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+function downloadErrors(){
+	var texto = [];
+	var errores = $('.alert.alert-danger>li');
+	if(errores.length > 0){
+		var cabecera = 'Fila\tISBN\tError\r';
+		texto.push(cabecera);
+			errores.each(function (i) {
+				var fila = $(this).find('.fila').html().trim();
+				var isbn = $(this).find('.isbnError').html().trim();
+				var errorText = $(this).find('.errorText').html().trim();
+				texto.push(fila + '\t' + isbn + '\t' + errorText + '\r');
+			})
+
+		var isbns = errores.find('.isbnError');
+		var reader = new FileReader();
+
+		var textoBlob =  new Blob(texto, {
+		        type: 'text/plain'
+		    });
+	    reader.onload = function (event) {
+		    	 var save = document.createElement('a');
+	        save.href = event.target.result;
+	        save.target = '_blank';
+	        save.download =  'errores.csv';
+	        var clicEvent = new MouseEvent('click', {
+	            'view': window,
+	                'bubbles': true,
+	                'cancelable': true
+	        });
+	        save.dispatchEvent(clicEvent);
+	        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+	    }
+	    reader.readAsDataURL(textoBlob);
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_jsdownloadFile</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
