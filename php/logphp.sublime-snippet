@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+FWUtils::log(BlinkFW_LogFile::LEVEL_DEBUG, "$1 " . print_r($2, true));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_logphp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.php</scope>
+</snippet>
