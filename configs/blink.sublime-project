@@ -1,0 +1,28 @@
+{	"folders":
+	[
+		{
+			"path": "blink4edu"
+		},
+		{
+			"path": "blinkweb/blink"
+		}
+	],
+	"settings":
+	{
+		"xdebug":
+		{	"max_children" : 32 ,
+			"max_depth" : 3 ,
+			"break_on_exception": false,
+			"close_on_stop": true,
+			"ide_key": "XDEBUG_ECLIPSE",
+			"path_mapping":
+			{
+				"/media/sf_blink4edu/fw/": "F:\\workspaces\\web\\blink4edu\\fw\\",
+				"/media/sf_blinkweb/www/": "F:\\workspaces\\web\\blinkweb\\blink\\www\\"
+			},
+			"port": 9000,
+			"super_globals": true,
+			"url": "http://blink/LMS/index.php"
+		}
+	}
+}
