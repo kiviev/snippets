@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+function info(i){
+		$slide = $('#transp'+i).closest('.js-slide-wrapper'),
+						prefix = 't' + $slide.data('slide-index'),
+						slide = window[prefix + '_slide'];
+						// console.log($slide);
+						return slide;
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_infoSlide</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
