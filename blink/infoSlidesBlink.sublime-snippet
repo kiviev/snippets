@@ -1,10 +1,10 @@
 <snippet>
 	<content><![CDATA[
 function info(i){
-		$slide = $('#transp'+i).closest('.js-slide-wrapper'),
-						prefix = 't' + $slide.data('slide-index'),
+		\$slide = \$('#transp'+i).closest('.js-slide-wrapper'),
+						prefix = 't' + \$slide.data('slide-index'),
 						slide = window[prefix + '_slide'];
-						// console.log($slide);
+						// console.log(\$slide);
 						return slide;
 	}
 ]]></content>
