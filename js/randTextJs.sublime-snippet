@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+function randtext(num){
+	num = num ;
+	var str ='',
+	space = ' ';
+
+	var ultstr= '';
+	for (var i = 0; i < num; i++) {
+		var str2 = '';
+		var rand = Math.floor(Math.random() * (100 - 1)) + 1;
+		if( rand % 6 == 0 && ultstr != space && i < num-1) str2 = space;
+		else{ 
+			str2 = 'x';
+		}
+		ultstr = str2;
+		str += str2;
+	}	
+	return str;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_randTextJs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
