@@ -1,0 +1,69 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * funcion para crear y descargar un archivo csv por defecto desde un array de objetos dado
+ * @param  {Array} obj       Array de objetos
+ * @param  {String} separator Separador para el archivo csv /t por defecto
+ * @param  {String} namefile  Nombre para el archivo de salida "Archivo" por defecto
+ * @param  {String} extension Extension del archivo de salida
+ */
+function csv(obj,separator,namefile,extension){
+	separator = typeof separator !== 'undefined' ? separator : '/t';
+	namefile = typeof namefile !== 'undefined' ? namefile : 'Archivo';
+	extension = typeof extension !== 'undefined' ? extension : 'csv';
+	var texto = [];
+	var cabeceras = '';
+	var keys = []
+			for (var i = 0; i < obj.length; i++) {
+				if(i==0){
+					for (var j = 0; j < Object.keys(obj[0]).length; j++) {
+						cabeceras += Object.keys(obj[0])[j];
+
+						if(j == Object.keys(obj[0]).length -1 ) cabeceras += '\r';
+						else cabeceras += separator;
+
+						keys.push(Object.keys(obj[0])[j]);
+					}
+					texto.push(cabeceras);
+
+				}
+				var linea = '';
+					var keys2;
+					for (var val in obj[i] ){
+						keys2 = Object.keys(obj[i]);
+						linea += obj[i][val].replace(/\r\n/g, '');
+						if(val == keys2[keys2.length -1] ) linea += '\n'
+						else linea += separator;
+					}
+				texto.push(linea);
+			}
+
+	var reader = new FileReader();
+
+	var textoBlob =  new Blob(texto, {
+	        type: 'text/plain'
+	    });
+	var date = new Date();
+	var dateString =  date.getDay() + '-'+ (date.getMonth()+ 1) + '-' + date.getFullYear() + '_'+ date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds();
+
+	    reader.onload = function (event) {
+		    var save = document.createElement('a');
+		        save.href = event.target.result;
+		        save.target = '_blank';
+		        save.download =  namefile + '_' + dateString + '.' + extension;
+	        var clicEvent = new MouseEvent('click', {
+	            'view': window,
+	                'bubbles': true,
+	                'cancelable': true
+	        });
+	        	save.dispatchEvent(clicEvent);
+	        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+	    }
+	    reader.readAsDataURL(textoBlob);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_csvJs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
