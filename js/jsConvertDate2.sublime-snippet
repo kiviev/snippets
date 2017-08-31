@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+function convertDate(inputFormat, separator) {
+	separator = typeof separator == 'undefined' ? '/' : separator;
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  var d = new Date(inputFormat);
+  return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join(separator) + ' ' + [pad(d.getHours()), pad(d.getMinutes()) , pad(d.getSeconds()) ].join(':');
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_convertDate2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js,source.ts</scope>
+</snippet>
