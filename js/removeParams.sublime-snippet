@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+function removeParams(key, sourceURL) {
+    var rtn = sourceURL.split("?")[0],
+        param,
+        params_arr = [],
+        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+    function rmParam(k){
+    	for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+            param = params_arr[i].split("=")[0];
+            if (param === k) {
+                params_arr.splice(i, 1);
+            }
+        }
+    }
+    if (queryString !== "") {
+        params_arr = queryString.split("&");
+        if(Array.isArray(key)){
+        	for (var i = 0; i < key.length; i++) {
+        		rmParam(key[i]);
+        	}
+        }else{
+        	rmParam(key)
+        }
+    }
+
+        rtn = rtn + "?" + params_arr.join("&");
+    
+    return rtn;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_removeParams</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>
